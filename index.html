@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Esportify</title>
+    <style>
+        /* Styles de base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        header {
+            background: black;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .banner {
+            background: url('./images/arriereplanmenu.jpeg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px #000;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #00acee;
+        }
+
+        .events,
+        .news {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .active-slide {
+            display: block;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .event-list,
+        .event-detail {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .event-title {
+            color: #00acee;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .filters {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .filter-input {
+            margin-right: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+        }
+
+        footer {
+            background: #333;
+            text-align: center;
+            padding: 10px;
+            color: #999;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- En-tête du site -->
+    <header>
+        <h1>Bienvenue sur ESPORTIFY</h1>
+        <nav>
+            <a href="#about">Accueil</a>
+            <a href="events.php">Événements</a>
+            <a href="#contact">Contact</a>
+            <a href="login.php">Se connecter</a>
+            <a href="register.php">S'inscrire</a>
+
+        </nav>
+    </header>
+
+    <!-- Bannière d'accueil -->
+    <div class="banner">
+        <p>Rejoignez l'univers de l'e-sport !</p>
+    </div>
+
+    <!-- Section à propos -->
+    <section id="about" class="section">
+        <h2>À propos de nous</h2>
+        <p>Esportify est une startup spécialisée dans le domaine du e-sports qui a vu le jour le 17 mars
+            2021. Elle est située en France et propose d’organiser ces évènements et ainsi remporter de nombreux prix !
+        </p>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>Galerie d'Images</h2>
+        <div class="slider-container">
+            <!-- Diapositive 1 -->
+            <div class="slide active-slide">
+                <img src="./images/imageslide1.jpeg" alt="Image 1">
+            </div>
+            <!-- Diapositive 2 -->
+            <div class="slide">
+                <img src="./images/imageslide2.jpeg" alt="Image 2">
+            </div>
+            <!-- Diapositive 3 -->
+            <div class="slide">
+                <img src="./images/imageslide3.jpeg" alt="Image 3">
+            </div>
+            <!-- Boutons de navigation -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+
+
+    <!-- Pied de page -->
+    <footer id="contact">
+        <h2>Contact</h2>
+        <p>Email : <a href="mailto:contact@esport.com" style="color: #00acee;">contact@esport.com</a></p>
+        <p>Téléphone : <a href="tel:+1234567890" style="color: #00acee;">+1 234 567 890</a></p>
+        <p>&copy; 2024 E-sport. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Cache tous les slides
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            } // Retourne au premier slide
+            slides[slideIndex - 1].style.display = "block"; // Affiche le slide courant
+            setTimeout(showSlides, 5000); // Change d'image toutes les 5 secondes
+        }
+
+        function changeSlide(n) {
+            slideIndex += n; // Change l'index du slide
+            const slides = document.getElementsByClassName("slide");
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            } // Retourne au premier slide
+            if (slideIndex < 1) {
+                slideIndex = slides.length
+            } // Retourne au dernier slide
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Cache tous les slides
+            }
+            slides[slideIndex - 1].style.display = "block"; // Affiche le slide courant
+        }
+
+        // Affiche le premier slide au chargement
+        showSlides();
+    </script>
+
+</body>
+
+</html>

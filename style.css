@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./images/imageesport.jpg');
+    background-size: 100% auto;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-size: cover;
+    background-position: center;
+    padding: 2em;
+    text-align: center;
+    color: white;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header / Navigation */
+header {
+    background-color: #007bff;
+    /* Bleu similaire à celui de index */
+    color: white;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0056b3;
+    /* Bleu plus foncé pour le survol */
+}
+
+/* Tableau de bord container */
+.dashboard-container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.dashboard-container h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Sections */
+section {
+    margin-top: 20px;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: #007bff;
+    /* Bleu pour les titres */
+    border-bottom: 2px solid #007bff;
+    /* Bleu en bas */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Liste */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+li button {
+    background-color: #007bff;
+    /* Bleu pour les boutons */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+li button:hover {
+    background-color: #0056b3;
+    /* Bleu plus foncé au survol */
+}

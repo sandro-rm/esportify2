@@ -1,0 +1,11 @@
+{
+    "name": "esportify",
+    "version": "1.0.0",
+    "description": "esportify",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "check-deps": "npm outdated"
+    },
+    "dependencies": {}
+}
